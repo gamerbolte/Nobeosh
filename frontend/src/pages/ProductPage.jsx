@@ -212,6 +212,7 @@ export default function ProductPage() {
         items: [{ name: product.name, price: currentVariation.price, quantity: quantity, variation: currentVariation.name }],
         total_amount: total,
         credits_used: creditsToUse,
+        promo_code: promoDiscount?.code || null,
         remark: fullRemark.trim() || null
       };
 
