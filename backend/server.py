@@ -1762,6 +1762,34 @@ async def create_order(order_data: CreateOrderRequest):
             logger.info(f"Order confirmation email sent to {order_data.customer_email}")
         except Exception as e:
             logger.error(f"Failed to send order confirmation email: {e}")
+    
+    # Send Discord webhook notifications for products with webhooks
+    try:
+        # Collect all Discord webhooks from order items
+        all_webhooks = []
+        product_names = []
+        
+        for item in order_data.items:
+            if hasattr(item, 'product_id') and item.product_id:
+                # Fetch product to get webhooks
+                product = await db.products.find_one({"id": item.product_id})
+                if product and product.get('discord_webhooks'):
+                    webhooks = product.get('discord_webhooks', [])
+                    all_webhooks.extend(webhooks)
+                    product_names.append(product.get('name', 'Unknown'))
+        
+        # Remove duplicates
+        unique_webhooks = list(set([w for w in all_webhooks if w and w.strip()]))
+        
+        if unique_webhooks:
+            logger.info(f"Sending Discord notifications to {len(unique_webhooks)} webhooks for order {order_id}")
+            await send_discord_order_notification(
+                webhook_urls=unique_webhooks,
+                order_data=local_order,
+                product_data={"name": ", ".join(set(product_names))} if product_names else None
+            )
+    except Exception as e:
+        logger.error(f"Failed to send Discord webhook: {e}")
 
     return {
         "success": True,
