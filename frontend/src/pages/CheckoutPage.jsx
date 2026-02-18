@@ -160,6 +160,7 @@ export default function CheckoutPage() {
         })),
         total_amount: total,
         credits_used: creditsToUse,
+        promo_code: promoDiscount?.code || null,
         remark: fullRemark.trim() || null
       };
 
