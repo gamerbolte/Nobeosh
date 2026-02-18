@@ -78,9 +78,16 @@ async def send_discord_order_notification(
     }
     color = status_colors.get(status, 0x95A5A6)  # Gray default
     
-    # Build Discord embed with only requested fields
+    # Build custom fields text (outside embed for click-to-copy)
+    custom_fields_text = ""
+    if custom_fields_list:
+        custom_fields_text += "\n\n**📝 Custom Fields (Click to Copy):**\n"
+        for field_data in custom_fields_list:
+            custom_fields_text += f"**{field_data['label']}:** `{field_data['value']}`\n"
+    
+    # Build Discord message with embed
     embed = {
-        "content": "@everyone 🔔 **New Order Received!**",
+        "content": f"@everyone 🔔 **New Order Received!**{custom_fields_text}",
         "embeds": [{
             "title": f"{status_emoji} New Order - #{order_id[:8].upper()}",
             "color": color,
@@ -107,15 +114,6 @@ async def send_discord_order_notification(
             }
         }]
     }
-    
-    # Add custom fields - each value in separate code block for easy copying
-    if custom_fields_list:
-        for field_data in custom_fields_list:
-            embed["embeds"][0]["fields"].insert(2, {
-                "name": f"📝 {field_data['label']}",
-                "value": f"```\n{field_data['value']}\n```",
-                "inline": False
-            })
     
     
     # Send to all webhooks
