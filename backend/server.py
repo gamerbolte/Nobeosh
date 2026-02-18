@@ -836,6 +836,7 @@ async def verify_customer_otp(verify: OTPVerify):
             "email": email,
             "name": email.split("@")[0],
             "phone": None,
+            "credit_balance": 0.0,  # Initialize credit balance
             "created_at": datetime.now(timezone.utc).isoformat(),
             "last_login": datetime.now(timezone.utc).isoformat()
         }
