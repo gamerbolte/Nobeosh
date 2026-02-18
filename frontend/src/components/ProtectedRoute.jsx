@@ -65,7 +65,7 @@ export default function ProtectedRoute({ children, requiredPermission }) {
             You don't have permission to access this page. Please contact the main administrator if you need access.
           </p>
           <a 
-            href="/admin" 
+            href="/panelgsnadminbackend" 
             className="inline-block bg-gold-500 hover:bg-gold-600 text-black font-semibold px-6 py-2 rounded-lg transition-colors"
           >
             Back to Dashboard
