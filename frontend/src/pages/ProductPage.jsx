@@ -209,7 +209,14 @@ export default function ProductPage() {
         customer_name: orderForm.customer_name,
         customer_phone: orderForm.customer_phone,
         customer_email: orderForm.customer_email || null,
-        items: [{ name: product.name, price: currentVariation.price, quantity: quantity, variation: currentVariation.name }],
+        items: [{ 
+          name: product.name, 
+          price: currentVariation.price, 
+          quantity: quantity, 
+          variation: currentVariation.name,
+          product_id: product.id,
+          variation_id: currentVariation.id
+        }],
         total_amount: total,
         credits_used: creditsToUse,
         promo_code: promoDiscount?.code || null,
