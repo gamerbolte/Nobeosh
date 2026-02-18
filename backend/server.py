@@ -1196,6 +1196,9 @@ async def get_product(product_id: str):
     if "updated_at" in product and isinstance(product["updated_at"], datetime):
         product["updated_at"] = product["updated_at"].isoformat()
     
+    # Remove Discord webhooks from public API response
+    product.pop("discord_webhooks", None)
+    
     return product
 
 @api_router.get("/products/{product_id}/related")
