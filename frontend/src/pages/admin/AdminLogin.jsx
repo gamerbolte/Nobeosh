@@ -22,7 +22,7 @@ export default function AdminLogin() {
       const res = await authAPI.login({ email: formData.username, password: formData.password });
       localStorage.setItem('admin_token', res.data.token);
       toast.success('Login successful!');
-      navigate('/admin');
+      navigate('/panelgsnadminbackend');
     } catch (error) {
       toast.error(error.response?.data?.detail || 'Invalid credentials');
     } finally {
