@@ -1667,6 +1667,7 @@ class CreateOrderRequest(BaseModel):
     total_amount: float
     remark: Optional[str] = None
     credits_used: float = 0  # Store credits used for this order
+    promo_code: Optional[str] = None  # Promo code used for this order
 
 @api_router.post("/orders/create")
 async def create_order(order_data: CreateOrderRequest):
