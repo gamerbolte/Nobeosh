@@ -275,6 +275,31 @@ export default function AdminProducts() {
                 </div>
               </div>
 
+              {/* WhatsApp Only Section */}
+              <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-4 space-y-4">
+                <Label className="text-green-400 font-semibold flex items-center gap-2">💬 WhatsApp Contact Option</Label>
+                <div className="flex items-center gap-2">
+                  <Switch 
+                    checked={formData.whatsapp_only} 
+                    onCheckedChange={(checked) => setFormData({ ...formData, whatsapp_only: checked })} 
+                  />
+                  <Label className="text-sm">Show "Message on WhatsApp" instead of order buttons</Label>
+                </div>
+                {formData.whatsapp_only && (
+                  <div className="space-y-2">
+                    <Label className="text-sm">Custom WhatsApp Message (Optional)</Label>
+                    <Textarea
+                      value={formData.whatsapp_message}
+                      onChange={(e) => setFormData({ ...formData, whatsapp_message: e.target.value })}
+                      className="bg-black border-white/20"
+                      placeholder="Hi, I'm interested in {product_name}. Can you provide more details?"
+                      rows={3}
+                    />
+                    <p className="text-xs text-white/40">Use {'{'}product_name{'}'} as placeholder. Leave empty for default message.</p>
+                  </div>
+                )}
+              </div>
+
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2"><Switch checked={formData.is_active} onCheckedChange={(checked) => setFormData({ ...formData, is_active: checked })} /><Label className="text-sm">Active</Label></div>
                 <div className="flex items-center gap-2"><Switch checked={formData.is_sold_out} onCheckedChange={(checked) => setFormData({ ...formData, is_sold_out: checked })} /><Label className="text-sm">Sold Out</Label></div>
