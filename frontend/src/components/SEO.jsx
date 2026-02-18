@@ -72,34 +72,34 @@ function updateMetaTag(name, content, attribute = 'name') {
 // Pre-built SEO configs for common pages
 export const SEOConfigs = {
   home: {
-    title: 'GameShop Nepal - Digital Products at Best Prices in Nepal',
-    description: 'Buy Netflix, Spotify, YouTube Premium, PUBG UC, Free Fire diamonds and more digital products at the best prices in Nepal. Instant delivery guaranteed!',
-    keywords: 'digital products Nepal, Netflix Nepal price, Spotify Nepal, PUBG UC Nepal, gaming topup, streaming subscription Nepal',
+    title: 'Netflix, Spotify Premium, YouTube Premium Nepal मा सबैभन्दा सस्तो | GameShop Nepal',
+    description: 'नेपालमा Netflix Subscription, Spotify Premium, YouTube Premium, Amazon Prime Video, Disney+ Hotstar सबैभन्दा सस्तो दरमा किन्नुहोस्। तुरुन्त डेलिभरी। Buy streaming subscriptions at best prices in Nepal with instant delivery!',
+    keywords: 'Netflix Nepal, Spotify Premium Nepal, YouTube Premium Nepal, Prime Video Nepal, Netflix subscription price Nepal, Spotify कसरी किन्ने, YouTube Premium कति पर्छ, streaming services Nepal, OTT platforms Nepal, Netflix सस्तोमा, digital subscription Kathmandu',
   },
   about: {
-    title: 'About Us | GameShop Nepal',
-    description: 'Learn about GameShop Nepal - Your trusted source for digital products since 2021. 100% genuine products with instant delivery.',
-    keywords: 'GameShop Nepal about, digital products store Nepal, trusted online store Nepal',
+    title: 'About Us - Nepal को Trusted Digital Products Store | GameShop Nepal',
+    description: 'GameShop Nepal - नेपालमा सबैभन्दा भरपर्दो डिजिटल प्रोडक्ट स्टोर। Netflix, Spotify, YouTube Premium तुरुन्त डेलिभरी। १००% असली प्रोडक्ट। Your trusted source for streaming subscriptions since 2021.',
+    keywords: 'GameShop Nepal about, trusted digital store Nepal, Netflix seller Nepal, Spotify dealer Nepal, streaming subscription Nepal',
   },
   faq: {
-    title: 'FAQ - Frequently Asked Questions | GameShop Nepal',
-    description: 'Find answers to common questions about ordering, payment, and delivery at GameShop Nepal.',
-    keywords: 'GameShop Nepal FAQ, how to order digital products, payment methods Nepal',
+    title: 'FAQ - नेपालमा Netflix, Spotify कसरी किन्ने? | GameShop Nepal',
+    description: 'Netflix, Spotify Premium, YouTube Premium नेपालमा कसरी किन्ने? पेमेन्ट कसरी गर्ने? तुरुन्त डेलिभरी कति समयमा? सबै जवाफ यहाँ। Find answers about ordering streaming subscriptions in Nepal.',
+    keywords: 'how to buy Netflix Nepal, Spotify Premium कसरी किन्ने, YouTube Premium Nepal FAQ, streaming subscription guide Nepal, payment methods Nepal',
   },
   blog: {
-    title: 'Blog & Guides | GameShop Nepal',
-    description: 'Gaming tips, streaming guides, and digital product tutorials from GameShop Nepal.',
-    keywords: 'gaming guides Nepal, Netflix tips, streaming guide, digital products blog',
+    title: 'Netflix, Spotify, YouTube Tips & Guides नेपालीमा | GameShop Nepal Blog',
+    description: 'Netflix कसरी प्रयोग गर्ने, Spotify Premium features, YouTube Premium benefits नेपालीमा। Streaming guides, gaming tips, and digital product tutorials.',
+    keywords: 'Netflix guide Nepal, Spotify tips Nepali, YouTube Premium features, streaming guide Nepal, OTT tutorial Nepali',
   },
   terms: {
-    title: 'Terms of Service | GameShop Nepal',
-    description: 'Terms and conditions for using GameShop Nepal services.',
-    keywords: 'GameShop Nepal terms, terms of service, legal',
+    title: 'Terms of Service - सेवाका शर्तहरू | GameShop Nepal',
+    description: 'GameShop Nepal को सेवा प्रयोग गर्नका लागि नियम र शर्तहरू। Terms and conditions for using GameShop Nepal services.',
+    keywords: 'GameShop Nepal terms, service terms Nepal, legal terms',
   },
   track: {
-    title: 'Track Your Order | GameShop Nepal',
-    description: 'Track your order status in real-time. Enter your order ID to see the latest updates.',
-    keywords: 'track order Nepal, order status, delivery tracking',
+    title: 'Track Your Order - आफ्नो अर्डर ट्र्याक गर्नुहोस् | GameShop Nepal',
+    description: 'तपाईंको Netflix, Spotify, YouTube Premium अर्डर कहाँ पुग्यो हेर्नुहोस्। Track your streaming subscription order status in real-time.',
+    keywords: 'track order Nepal, order status Nepal, delivery tracking Nepal',
   },
 };
 
