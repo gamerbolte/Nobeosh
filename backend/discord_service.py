@@ -45,15 +45,20 @@ async def send_discord_order_notification(
         variation_text = f" ({variation})" if variation else ""
         items_description += f"• **{quantity}x** {name}{variation_text} - Rs {price:,.2f}\n"
     
-    # Extract custom fields from remark
-    custom_fields_text = ""
+    # Extract custom fields from remark - format with labels and copyable values
+    custom_fields_list = []
     if remark:
         # Parse custom fields from remark (they're formatted as "Label: Value")
         lines = remark.split('\n')
         for line in lines:
             line = line.strip()
             if line and ':' in line and not line.startswith('Promo Code:') and not line.startswith('Store Credits') and not line.startswith('Notes:'):
-                custom_fields_text += line + "\n"
+                # Split into label and value
+                parts = line.split(':', 1)
+                if len(parts) == 2:
+                    label = parts[0].strip()
+                    value = parts[1].strip()
+                    custom_fields_list.append({"label": label, "value": value})
     
     # Status emoji
     status_emojis = {
