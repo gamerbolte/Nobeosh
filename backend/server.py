@@ -208,6 +208,8 @@ class Product(BaseModel):
     stock_quantity: Optional[int] = None  # None means unlimited
     flash_sale_end: Optional[str] = None  # ISO datetime when flash sale ends
     flash_sale_label: Optional[str] = None  # e.g., "FLASH SALE - 50% OFF"
+    whatsapp_only: bool = False  # If True, show WhatsApp button instead of order buttons
+    whatsapp_message: Optional[str] = None  # Custom WhatsApp message template
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class ProductOrderUpdate(BaseModel):
