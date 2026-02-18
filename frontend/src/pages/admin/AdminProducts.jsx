@@ -28,6 +28,7 @@ export default function AdminProducts() {
   const [newCustomField, setNewCustomField] = useState(emptyCustomField);
   const [editingVariationId, setEditingVariationId] = useState(null);
   const [editingVariationData, setEditingVariationData] = useState(emptyVariation);
+  const [newWebhook, setNewWebhook] = useState('');
 
   const fetchData = async () => {
     try {
