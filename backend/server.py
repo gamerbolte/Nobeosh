@@ -1695,6 +1695,8 @@ class OrderItem(BaseModel):
     price: float
     quantity: int = 1
     variation: Optional[str] = None
+    product_id: Optional[str] = None  # For Discord webhook lookup
+    variation_id: Optional[str] = None
 
 class CreateOrderRequest(BaseModel):
     customer_name: str
