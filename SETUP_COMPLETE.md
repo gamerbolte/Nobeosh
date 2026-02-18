@@ -9,7 +9,7 @@
 ## 🔑 Access Credentials
 
 ### Admin Panel
-- **URL**: https://ganguli-wata.preview.emergentagent.com/admin/login
+- **URL**: https://ganguli-wata.preview.emergentagent.com/panelgsnadminbackend/login
 - **Username**: `gsnadmin`
 - **Password**: `gsnadmin`
 
