@@ -47,8 +47,8 @@ Clone and set up the GameShop Nepal e-commerce application from GitHub repositor
 - Password: `gsnadmin`
 
 ## URLs
-- Frontend: https://ganguli-wata.preview.emergentagent.com
-- Admin: https://ganguli-wata.preview.emergentagent.com/panelgsnadminbackend/login
+- Frontend: https://git-sync-13.preview.emergentagent.com
+- Admin: https://git-sync-13.preview.emergentagent.com/panelgsnadminbackend/login
 
 ## Testing Status
 - Backend: 100% pass (18/18 tests)

@@ -9,12 +9,12 @@
 ## 🔑 Access Credentials
 
 ### Admin Panel
-- **URL**: https://ganguli-wata.preview.emergentagent.com/panelgsnadminbackend/login
+- **URL**: https://git-sync-13.preview.emergentagent.com/panelgsnadminbackend/login
 - **Username**: `gsnadmin`
 - **Password**: `gsnadmin`
 
 ### Customer Login
-- **URL**: https://ganguli-wata.preview.emergentagent.com
+- **URL**: https://git-sync-13.preview.emergentagent.com
 - **Method**: OTP-based email authentication
 
 ---
@@ -55,15 +55,15 @@
 ## 🌐 Application URLs
 
 ### Frontend (Customer Site)
-- **URL**: https://ganguli-wata.preview.emergentagent.com
+- **URL**: https://git-sync-13.preview.emergentagent.com
 - **Port**: 3000 (internal)
 - **Status**: ✅ Running
 
 ### Backend API
-- **URL**: https://ganguli-wata.preview.emergentagent.com/api
+- **URL**: https://git-sync-13.preview.emergentagent.com/api
 - **Port**: 8001 (internal)
 - **Status**: ✅ Running
-- **Docs**: https://ganguli-wata.preview.emergentagent.com/docs (FastAPI auto-docs)
+- **Docs**: https://git-sync-13.preview.emergentagent.com/docs (FastAPI auto-docs)
 
 ---
 
@@ -213,12 +213,12 @@ ImgBB is working correctly for payment screenshot uploads during checkout.
 
 ### Recommended Actions
 1. **Test the application**: 
-   - Visit https://ganguli-wata.preview.emergentagent.com
+   - Visit https://git-sync-13.preview.emergentagent.com
    - Browse products
    - Test customer login with OTP
    
 2. **Login to Admin Panel**:
-   - Visit https://ganguli-wata.preview.emergentagent.com/admin/login
+   - Visit https://git-sync-13.preview.emergentagent.com/admin/login
    - Username: `gsnadmin` / Password: `gsnadmin`
    - Explore all admin features
 
