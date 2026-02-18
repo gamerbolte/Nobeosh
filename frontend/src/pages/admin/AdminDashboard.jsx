@@ -33,10 +33,10 @@ export default function AdminDashboard() {
   }, []);
 
   const statCards = [
-    { label: 'Categories', value: stats.categories, icon: FolderOpen, color: 'bg-purple-500/10 text-purple-500', link: '/admin/categories' },
-    { label: 'Products', value: stats.products, icon: Package, color: 'bg-blue-500/10 text-blue-500', link: '/admin/products' },
-    { label: 'Reviews', value: stats.reviews, icon: Star, color: 'bg-gold-500/10 text-gold-500', link: '/admin/reviews' },
-    { label: 'Social Links', value: stats.socialLinks, icon: Share2, color: 'bg-green-500/10 text-green-500', link: '/admin/social-links' },
+    { label: 'Categories', value: stats.categories, icon: FolderOpen, color: 'bg-purple-500/10 text-purple-500', link: '/panelgsnadminbackend/categories' },
+    { label: 'Products', value: stats.products, icon: Package, color: 'bg-blue-500/10 text-blue-500', link: '/panelgsnadminbackend/products' },
+    { label: 'Reviews', value: stats.reviews, icon: Star, color: 'bg-gold-500/10 text-gold-500', link: '/panelgsnadminbackend/reviews' },
+    { label: 'Social Links', value: stats.socialLinks, icon: Share2, color: 'bg-green-500/10 text-green-500', link: '/panelgsnadminbackend/social-links' },
   ];
 
   return (
@@ -58,9 +58,9 @@ export default function AdminDashboard() {
         <div className="bg-card border border-white/10 rounded-lg p-4 lg:p-6">
           <h2 className="font-heading text-lg lg:text-xl font-semibold text-white uppercase mb-4">Quick Actions</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
-            <Link to="/admin/categories" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-categories"><FolderOpen className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Categories</span></Link>
-            <Link to="/admin/products" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-products"><Package className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Products</span></Link>
-            <Link to="/admin/reviews" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-reviews"><Star className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Reviews</span></Link>
+            <Link to="/panelgsnadminbackend/categories" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-categories"><FolderOpen className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Categories</span></Link>
+            <Link to="/panelgsnadminbackend/products" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-products"><Package className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Products</span></Link>
+            <Link to="/panelgsnadminbackend/reviews" className="flex items-center gap-3 p-3 lg:p-4 bg-black rounded-lg border border-white/10 hover:border-gold-500/50 transition-all" data-testid="quick-action-reviews"><Star className="h-5 w-5 text-gold-500 flex-shrink-0" /><span className="text-white text-sm lg:text-base">Manage Reviews</span></Link>
           </div>
         </div>
 
