@@ -4264,6 +4264,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.on_event("startup")
+async def startup_event():
+    """Start background tasks on server startup"""
+    asyncio.create_task(run_cleanup_task())
+    logger.info("✅ Order cleanup task started")
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
