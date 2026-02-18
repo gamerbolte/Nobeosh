@@ -111,26 +111,6 @@ async def send_discord_order_notification(
             "inline": False
         })
     
-    # Add remark field if exists
-    if remark and remark.strip():
-        embed["embeds"][0]["fields"].append({
-            "name": "📝 Remarks",
-            "value": remark[:1024],  # Discord limit
-            "inline": False
-        })
-    
-    # Add product info if provided
-    if product_data:
-        product_name = product_data.get('name', 'N/A')
-        product_image = product_data.get('image_url')
-        
-        if product_image:
-            embed["embeds"][0]["thumbnail"] = {"url": product_image}
-        
-        embed["embeds"][0]["author"] = {
-            "name": f"Product: {product_name}",
-            "icon_url": "https://cdn-icons-png.flaticon.com/512/869/869636.png"
-        }
     
     # Send to all webhooks
     async with httpx.AsyncClient(timeout=10.0) as client:
