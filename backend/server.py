@@ -190,6 +190,7 @@ class ProductCreate(BaseModel):
     flash_sale_label: Optional[str] = None  # e.g., "FLASH SALE - 50% OFF"
     whatsapp_only: bool = False  # If True, show WhatsApp button instead of order buttons
     whatsapp_message: Optional[str] = None  # Custom WhatsApp message template
+    discord_webhooks: List[str] = []  # Discord webhook URLs for order notifications
 
 class Product(BaseModel):
     model_config = ConfigDict(extra="ignore")
