@@ -188,6 +188,8 @@ class ProductCreate(BaseModel):
     stock_quantity: Optional[int] = None  # None means unlimited
     flash_sale_end: Optional[str] = None  # ISO datetime when flash sale ends
     flash_sale_label: Optional[str] = None  # e.g., "FLASH SALE - 50% OFF"
+    whatsapp_only: bool = False  # If True, show WhatsApp button instead of order buttons
+    whatsapp_message: Optional[str] = None  # Custom WhatsApp message template
 
 class Product(BaseModel):
     model_config = ConfigDict(extra="ignore")
