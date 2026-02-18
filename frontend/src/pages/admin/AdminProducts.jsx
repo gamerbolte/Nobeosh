@@ -13,7 +13,7 @@ import { toast } from 'sonner';
 import { productsAPI, categoriesAPI } from '@/lib/api';
 
 const AVAILABLE_TAGS = ['Popular', 'Sale', 'New', 'Limited', 'Hot', 'Best Seller', 'Flash Sale'];
-const emptyProduct = { name: '', slug: '', description: '', image_url: '', category_id: '', variations: [], tags: [], custom_fields: [], sort_order: 0, is_active: true, is_sold_out: false, stock_quantity: null, flash_sale_end: '', flash_sale_label: '' };
+const emptyProduct = { name: '', slug: '', description: '', image_url: '', category_id: '', variations: [], tags: [], custom_fields: [], sort_order: 0, is_active: true, is_sold_out: false, stock_quantity: null, flash_sale_end: '', flash_sale_label: '', whatsapp_only: false, whatsapp_message: '' };
 const emptyVariation = { id: '', name: '', price: '', original_price: '', cost_price: '' };
 const emptyCustomField = { id: '', label: '', placeholder: '', required: false };
 
