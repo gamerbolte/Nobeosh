@@ -699,6 +699,7 @@ async def send_customer_otp(request: OTPRequest):
             "name": request.name or email.split("@")[0],
             "phone": request.whatsapp_number,
             "whatsapp_number": request.whatsapp_number,
+            "credit_balance": 0.0,  # Initialize credit balance
             "created_at": datetime.now(timezone.utc).isoformat(),
             "last_login": None
         }
