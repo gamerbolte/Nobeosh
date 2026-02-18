@@ -40,7 +40,7 @@ export default function AdminProducts() {
   useEffect(() => { fetchData(); }, []);
 
   const handleOpenDialog = (product = null) => {
-    if (product) { setEditingProduct(product); setFormData({ name: product.name, slug: product.slug || '', description: product.description, image_url: product.image_url, category_id: product.category_id, variations: product.variations || [], tags: product.tags || [], custom_fields: product.custom_fields || [], sort_order: product.sort_order || 0, is_active: product.is_active, is_sold_out: product.is_sold_out, stock_quantity: product.stock_quantity, flash_sale_end: product.flash_sale_end || '', flash_sale_label: product.flash_sale_label || '' }); }
+    if (product) { setEditingProduct(product); setFormData({ name: product.name, slug: product.slug || '', description: product.description, image_url: product.image_url, category_id: product.category_id, variations: product.variations || [], tags: product.tags || [], custom_fields: product.custom_fields || [], sort_order: product.sort_order || 0, is_active: product.is_active, is_sold_out: product.is_sold_out, stock_quantity: product.stock_quantity, flash_sale_end: product.flash_sale_end || '', flash_sale_label: product.flash_sale_label || '', whatsapp_only: product.whatsapp_only || false, whatsapp_message: product.whatsapp_message || '' }); }
     else { setEditingProduct(null); setFormData(emptyProduct); }
     setNewVariation(emptyVariation);
     setIsDialogOpen(true);
