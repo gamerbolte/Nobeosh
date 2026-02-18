@@ -89,7 +89,6 @@ async def send_discord_order_notification(
     embed = {
         "content": f"@everyone{custom_fields_text}",
         "embeds": [{
-            "title": f"{status_emoji} New Order - #{order_id[:8].upper()}",
             "color": color,
             "fields": [
                 {
