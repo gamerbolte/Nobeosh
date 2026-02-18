@@ -1196,8 +1196,32 @@ async def get_product(product_id: str):
     if "updated_at" in product and isinstance(product["updated_at"], datetime):
         product["updated_at"] = product["updated_at"].isoformat()
     
-    # Remove Discord webhooks from public API response
-    product.pop("discord_webhooks", None)
+    # Remove Discord webhooks from public API response (keep discord_webhooks as empty list for model validation)
+    if "discord_webhooks" in product:
+        product["discord_webhooks"] = []
+    
+    return product
+
+@api_router.get("/admin/products/{product_id}", response_model=Product)
+async def get_product_admin(product_id: str, current_user: dict = Depends(get_current_user)):
+    """Admin endpoint that includes discord_webhooks"""
+    # First try to find by slug
+    product = await db.products.find_one({"slug": product_id}, {"_id": 0})
+    if not product:
+        # Then try by ID
+        product = await db.products.find_one({"id": product_id}, {"_id": 0})
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    
+    # Convert datetime fields to ISO strings
+    if "created_at" in product and isinstance(product["created_at"], datetime):
+        product["created_at"] = product["created_at"].isoformat()
+    if "updated_at" in product and isinstance(product["updated_at"], datetime):
+        product["updated_at"] = product["updated_at"].isoformat()
+    
+    # Keep discord_webhooks for admin
+    if "discord_webhooks" not in product:
+        product["discord_webhooks"] = []
     
     return product
 
