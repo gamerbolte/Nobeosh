@@ -17,9 +17,9 @@ const navGroups = [
     id: 'main',
     label: null, // No label for main items
     items: [
-      { path: '/admin', label: 'Dashboard', icon: LayoutDashboard, permission: null },
-      { path: '/admin/analytics', label: 'Analytics', icon: BarChart3, permission: 'view_analytics' },
-      { path: '/admin/orders', label: 'Orders', icon: ShoppingCart, permission: 'view_orders' },
+      { path: '/panelgsnadminbackend', label: 'Dashboard', icon: LayoutDashboard, permission: null },
+      { path: '/panelgsnadminbackend/analytics', label: 'Analytics', icon: BarChart3, permission: 'view_analytics' },
+      { path: '/panelgsnadminbackend/orders', label: 'Orders', icon: ShoppingCart, permission: 'view_orders' },
     ]
   },
   {
@@ -27,9 +27,9 @@ const navGroups = [
     label: 'Store',
     icon: Store,
     items: [
-      { path: '/admin/products', label: 'Products', icon: Package, permission: 'view_products' },
-      { path: '/admin/categories', label: 'Categories', icon: FolderOpen, permission: 'view_categories' },
-      { path: '/admin/reviews', label: 'Reviews', icon: Star, permission: 'view_reviews' },
+      { path: '/panelgsnadminbackend/products', label: 'Products', icon: Package, permission: 'view_products' },
+      { path: '/panelgsnadminbackend/categories', label: 'Categories', icon: FolderOpen, permission: 'view_categories' },
+      { path: '/panelgsnadminbackend/reviews', label: 'Reviews', icon: Star, permission: 'view_reviews' },
     ]
   },
   {
@@ -37,8 +37,8 @@ const navGroups = [
     label: 'Customers',
     icon: Users,
     items: [
-      { path: '/admin/customers', label: 'All Customers', icon: Users, permission: 'view_customers' },
-      { path: '/admin/staff', label: 'Staff Management', icon: Shield, permission: 'manage_admins' },
+      { path: '/panelgsnadminbackend/customers', label: 'All Customers', icon: Users, permission: 'view_customers' },
+      { path: '/panelgsnadminbackend/staff', label: 'Staff Management', icon: Shield, permission: 'manage_admins' },
     ]
   },
   {
@@ -46,9 +46,9 @@ const navGroups = [
     label: 'Marketing',
     icon: Megaphone,
     items: [
-      { path: '/admin/promo-codes', label: 'Promo Codes', icon: Ticket, permission: 'view_settings' },
-      { path: '/admin/newsletter', label: 'Newsletter', icon: Mail, permission: 'view_settings' },
-      { path: '/admin/notification-bar', label: 'Notification Bar', icon: Bell, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/promo-codes', label: 'Promo Codes', icon: Ticket, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/newsletter', label: 'Newsletter', icon: Mail, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/notification-bar', label: 'Notification Bar', icon: Bell, permission: 'view_settings' },
     ]
   },
   {
@@ -56,10 +56,10 @@ const navGroups = [
     label: 'Rewards & Credits',
     icon: Gift,
     items: [
-      { path: '/admin/credit-settings', label: 'Store Credits', icon: Coins, permission: 'view_settings' },
-      { path: '/admin/daily-reward', label: 'Daily Rewards', icon: Gift, permission: 'view_settings' },
-      { path: '/admin/referral', label: 'Referral Program', icon: UserPlus, permission: 'view_settings' },
-      { path: '/admin/multiplier', label: 'Multiplier Events', icon: Zap, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/credit-settings', label: 'Store Credits', icon: Coins, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/daily-reward', label: 'Daily Rewards', icon: Gift, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/referral', label: 'Referral Program', icon: UserPlus, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/multiplier', label: 'Multiplier Events', icon: Zap, permission: 'view_settings' },
     ]
   },
   {
@@ -67,9 +67,9 @@ const navGroups = [
     label: 'Content',
     icon: Palette,
     items: [
-      { path: '/admin/blog', label: 'Blog / Guides', icon: BookOpen, permission: 'view_blog' },
-      { path: '/admin/pages', label: 'Pages', icon: FileText, permission: 'view_pages' },
-      { path: '/admin/faqs', label: 'FAQs', icon: HelpCircle, permission: 'view_faqs' },
+      { path: '/panelgsnadminbackend/blog', label: 'Blog / Guides', icon: BookOpen, permission: 'view_blog' },
+      { path: '/panelgsnadminbackend/pages', label: 'Pages', icon: FileText, permission: 'view_pages' },
+      { path: '/panelgsnadminbackend/faqs', label: 'FAQs', icon: HelpCircle, permission: 'view_faqs' },
     ]
   },
   {
@@ -77,9 +77,9 @@ const navGroups = [
     label: 'Settings',
     icon: Wrench,
     items: [
-      { path: '/admin/pricing', label: 'Pricing', icon: Settings, permission: 'view_settings' },
-      { path: '/admin/payment-methods', label: 'Payment Methods', icon: CreditCard, permission: 'view_settings' },
-      { path: '/admin/social-links', label: 'Social Links', icon: Share2, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/pricing', label: 'Pricing', icon: Settings, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/payment-methods', label: 'Payment Methods', icon: CreditCard, permission: 'view_settings' },
+      { path: '/panelgsnadminbackend/social-links', label: 'Social Links', icon: Share2, permission: 'view_settings' },
     ]
   },
 ];
@@ -136,7 +136,7 @@ export default function AdminLayout({ children, title }) {
 
   const handleLogout = () => {
     localStorage.removeItem('admin_token');
-    navigate('/admin/login');
+    navigate('/panelgsnadminbackend/login');
   };
 
   const closeSidebar = () => setIsSidebarOpen(false);
