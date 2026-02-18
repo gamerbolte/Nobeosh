@@ -22,6 +22,7 @@ import httpx
 from email_service import send_email, get_order_confirmation_email, get_order_status_update_email, get_welcome_email
 from imgbb_service import upload_to_imgbb
 import google_sheets_service
+from discord_service import send_discord_order_notification, send_discord_order_status_update
 
 
 ROOT_DIR = Path(__file__).parent
