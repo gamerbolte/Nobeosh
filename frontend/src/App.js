@@ -90,29 +90,29 @@ function App() {
                   <Route path="/account" element={<CustomerAccountPage />} />
                   <Route path="/track-order" element={<OrderTrackingPage />} />
 
-                  <Route path="/admin/login" element={<AdminLogin />} />
-                  <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-                  <Route path="/admin/analytics" element={<ProtectedRoute requiredPermission="view_analytics"><AdminAnalytics /></ProtectedRoute>} />
-                  <Route path="/admin/products" element={<ProtectedRoute requiredPermission="view_products"><AdminProducts /></ProtectedRoute>} />
-                  <Route path="/admin/categories" element={<ProtectedRoute requiredPermission="view_categories"><AdminCategories /></ProtectedRoute>} />
-                  <Route path="/admin/reviews" element={<ProtectedRoute requiredPermission="view_reviews"><AdminReviews /></ProtectedRoute>} />
-                  <Route path="/admin/faqs" element={<ProtectedRoute requiredPermission="view_faqs"><AdminFAQs /></ProtectedRoute>} />
-                  <Route path="/admin/pages" element={<ProtectedRoute requiredPermission="view_pages"><AdminPages /></ProtectedRoute>} />
-                  <Route path="/admin/social-links" element={<ProtectedRoute requiredPermission="view_settings"><AdminSocialLinks /></ProtectedRoute>} />
-                  <Route path="/admin/payment-methods" element={<ProtectedRoute requiredPermission="view_settings"><AdminPaymentMethods /></ProtectedRoute>} />
-                  <Route path="/admin/notification-bar" element={<ProtectedRoute requiredPermission="view_settings"><AdminNotificationBar /></ProtectedRoute>} />
-                  <Route path="/admin/blog" element={<ProtectedRoute requiredPermission="view_blog"><AdminBlog /></ProtectedRoute>} />
-                  <Route path="/admin/promo-codes" element={<ProtectedRoute requiredPermission="view_settings"><AdminPromoCodes /></ProtectedRoute>} />
-                  <Route path="/admin/pricing" element={<ProtectedRoute requiredPermission="view_settings"><AdminPricingSettings /></ProtectedRoute>} />
-                  <Route path="/admin/trustpilot" element={<ProtectedRoute requiredPermission="view_settings"><AdminTrustpilot /></ProtectedRoute>} />
-                  <Route path="/admin/customers" element={<ProtectedRoute requiredPermission="view_customers"><AdminCustomers /></ProtectedRoute>} />
-                  <Route path="/admin/orders" element={<ProtectedRoute requiredPermission="view_orders"><AdminOrders /></ProtectedRoute>} />
-                  <Route path="/admin/staff" element={<ProtectedRoute requiredPermission="manage_admins"><AdminStaff /></ProtectedRoute>} />
-                  <Route path="/admin/newsletter" element={<ProtectedRoute requiredPermission="view_settings"><AdminNewsletter /></ProtectedRoute>} />
-                  <Route path="/admin/credit-settings" element={<ProtectedRoute requiredPermission="view_settings"><AdminCreditSettings /></ProtectedRoute>} />
-                  <Route path="/admin/daily-reward" element={<ProtectedRoute requiredPermission="view_settings"><AdminDailyReward /></ProtectedRoute>} />
-                  <Route path="/admin/referral" element={<ProtectedRoute requiredPermission="view_settings"><AdminReferral /></ProtectedRoute>} />
-                  <Route path="/admin/multiplier" element={<ProtectedRoute requiredPermission="view_settings"><AdminMultiplier /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/login" element={<AdminLogin />} />
+                  <Route path="/panelgsnadminbackend" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/analytics" element={<ProtectedRoute requiredPermission="view_analytics"><AdminAnalytics /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/products" element={<ProtectedRoute requiredPermission="view_products"><AdminProducts /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/categories" element={<ProtectedRoute requiredPermission="view_categories"><AdminCategories /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/reviews" element={<ProtectedRoute requiredPermission="view_reviews"><AdminReviews /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/faqs" element={<ProtectedRoute requiredPermission="view_faqs"><AdminFAQs /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/pages" element={<ProtectedRoute requiredPermission="view_pages"><AdminPages /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/social-links" element={<ProtectedRoute requiredPermission="view_settings"><AdminSocialLinks /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/payment-methods" element={<ProtectedRoute requiredPermission="view_settings"><AdminPaymentMethods /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/notification-bar" element={<ProtectedRoute requiredPermission="view_settings"><AdminNotificationBar /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/blog" element={<ProtectedRoute requiredPermission="view_blog"><AdminBlog /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/promo-codes" element={<ProtectedRoute requiredPermission="view_settings"><AdminPromoCodes /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/pricing" element={<ProtectedRoute requiredPermission="view_settings"><AdminPricingSettings /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/trustpilot" element={<ProtectedRoute requiredPermission="view_settings"><AdminTrustpilot /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/customers" element={<ProtectedRoute requiredPermission="view_customers"><AdminCustomers /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/orders" element={<ProtectedRoute requiredPermission="view_orders"><AdminOrders /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/staff" element={<ProtectedRoute requiredPermission="manage_admins"><AdminStaff /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/newsletter" element={<ProtectedRoute requiredPermission="view_settings"><AdminNewsletter /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/credit-settings" element={<ProtectedRoute requiredPermission="view_settings"><AdminCreditSettings /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/daily-reward" element={<ProtectedRoute requiredPermission="view_settings"><AdminDailyReward /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/referral" element={<ProtectedRoute requiredPermission="view_settings"><AdminReferral /></ProtectedRoute>} />
+                  <Route path="/panelgsnadminbackend/multiplier" element={<ProtectedRoute requiredPermission="view_settings"><AdminMultiplier /></ProtectedRoute>} />
                 </Routes>
               </BrowserRouter>
               <Toaster position="top-right" richColors />
