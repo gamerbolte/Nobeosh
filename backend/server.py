@@ -211,6 +211,7 @@ class Product(BaseModel):
     flash_sale_label: Optional[str] = None  # e.g., "FLASH SALE - 50% OFF"
     whatsapp_only: bool = False  # If True, show WhatsApp button instead of order buttons
     whatsapp_message: Optional[str] = None  # Custom WhatsApp message template
+    discord_webhooks: List[str] = []  # Discord webhook URLs for order notifications (admin only)
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class ProductOrderUpdate(BaseModel):
