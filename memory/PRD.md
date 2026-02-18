@@ -48,7 +48,7 @@ Clone and set up the GameShop Nepal e-commerce application from GitHub repositor
 
 ## URLs
 - Frontend: https://ganguli-wata.preview.emergentagent.com
-- Admin: https://ganguli-wata.preview.emergentagent.com/admin/login
+- Admin: https://ganguli-wata.preview.emergentagent.com/panelgsnadminbackend/login
 
 ## Testing Status
 - Backend: 100% pass (18/18 tests)
