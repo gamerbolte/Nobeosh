@@ -28,8 +28,6 @@ async def send_discord_order_notification(
     
     # Prepare embed data
     order_id = order_data.get('id', 'N/A')
-    customer_name = order_data.get('customer_name', 'N/A')
-    customer_email = order_data.get('customer_email', 'N/A')
     customer_phone = order_data.get('customer_phone', 'N/A')
     total_amount = order_data.get('total_amount', 0)
     items = order_data.get('items', [])
@@ -46,6 +44,16 @@ async def send_discord_order_notification(
         
         variation_text = f" ({variation})" if variation else ""
         items_description += f"• **{quantity}x** {name}{variation_text} - Rs {price:,.2f}\n"
+    
+    # Extract custom fields from remark
+    custom_fields_text = ""
+    if remark:
+        # Parse custom fields from remark (they're formatted as "Label: Value")
+        lines = remark.split('\n')
+        for line in lines:
+            line = line.strip()
+            if line and ':' in line and not line.startswith('Promo Code:') and not line.startswith('Store Credits') and not line.startswith('Notes:'):
+                custom_fields_text += line + "\n"
     
     # Status emoji
     status_emojis = {
@@ -65,28 +73,17 @@ async def send_discord_order_notification(
     }
     color = status_colors.get(status, 0x95A5A6)  # Gray default
     
-    # Build Discord embed
+    # Build Discord embed with only requested fields
     embed = {
         "content": "@everyone 🔔 **New Order Received!**",
         "embeds": [{
             "title": f"{status_emoji} New Order - #{order_id[:8].upper()}",
-            "description": f"A new order has been placed on GameShop Nepal!",
             "color": color,
             "fields": [
                 {
-                    "name": "👤 Customer Name",
-                    "value": customer_name,
-                    "inline": True
-                },
-                {
-                    "name": "📧 Email",
-                    "value": customer_email,
-                    "inline": True
-                },
-                {
-                    "name": "📱 Phone",
+                    "name": "📱 Customer Phone",
                     "value": customer_phone,
-                    "inline": True
+                    "inline": False
                 },
                 {
                     "name": "📦 Order Items",
@@ -94,28 +91,25 @@ async def send_discord_order_notification(
                     "inline": False
                 },
                 {
-                    "name": "💰 Total Amount",
+                    "name": "💰 Total Paid Amount",
                     "value": f"**Rs {total_amount:,.2f}**",
-                    "inline": True
-                },
-                {
-                    "name": "📊 Status",
-                    "value": f"{status_emoji} {status.upper()}",
-                    "inline": True
-                },
-                {
-                    "name": "🆔 Order ID",
-                    "value": f"`{order_id}`",
-                    "inline": True
+                    "inline": False
                 }
             ],
             "timestamp": datetime.utcnow().isoformat(),
             "footer": {
-                "text": "GameShop Nepal - Order Management",
-                "icon_url": "https://customer-assets.emergentagent.com/job_8ec93a6a-4f80-4dde-b760-4bc71482fa44/artifacts/4uqt5osn_Staff.zip%20-%201.png"
+                "text": "GameShop Nepal - Order Management"
             }
         }]
     }
+    
+    # Add custom fields in click-to-copy format if available
+    if custom_fields_text.strip():
+        embed["embeds"][0]["fields"].insert(2, {
+            "name": "📝 Custom Fields (Click to Copy)",
+            "value": f"```\n{custom_fields_text.strip()}\n```",
+            "inline": False
+        })
     
     # Add remark field if exists
     if remark and remark.strip():
