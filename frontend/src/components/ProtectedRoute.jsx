@@ -51,7 +51,7 @@ export default function ProtectedRoute({ children, requiredPermission }) {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to="/panelgsnadminbackend/login" replace />;
   }
 
   // Check if user has required permission
