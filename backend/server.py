@@ -1705,10 +1705,33 @@ async def create_order(order_data: CreateOrderRequest):
         "payment_screenshot": None,
         "payment_method": None,
         "credits_used": order_data.credits_used,
+        "promo_code": order_data.promo_code,
         "created_at": datetime.now(timezone.utc).isoformat()
     }
 
     await db.orders.insert_one(local_order)
+    
+    # Record promo code usage if a promo was used
+    if order_data.promo_code:
+        try:
+            # Increment usage count
+            await db.promo_codes.update_one(
+                {"code": order_data.promo_code.upper()},
+                {"$inc": {"used_count": 1}}
+            )
+            
+            # Record individual usage
+            usage_record = {
+                "id": str(uuid.uuid4()),
+                "promo_code": order_data.promo_code.upper(),
+                "order_id": order_id,
+                "customer_email": order_data.customer_email.lower(),
+                "used_at": datetime.now(timezone.utc).isoformat()
+            }
+            await db.promo_usage.insert_one(usage_record)
+            logger.info(f"Promo code {order_data.promo_code} usage recorded for order {order_id}")
+        except Exception as e:
+            logger.error(f"Failed to record promo usage: {e}")
     
     # Don't deduct credits immediately - they will be deducted when order is confirmed
     # Just mark the order with pending credits
