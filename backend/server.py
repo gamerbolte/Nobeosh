@@ -1082,12 +1082,14 @@ async def get_products(category_id: Optional[str] = None, active_only: bool = Tr
 
     products = await db.products.find(query, {"_id": 0}).sort([("sort_order", 1), ("created_at", -1)]).to_list(1000)
     
-    # Convert datetime fields to ISO strings
+    # Convert datetime fields to ISO strings and remove sensitive data
     for product in products:
         if "created_at" in product and isinstance(product["created_at"], datetime):
             product["created_at"] = product["created_at"].isoformat()
         if "updated_at" in product and isinstance(product["updated_at"], datetime):
             product["updated_at"] = product["updated_at"].isoformat()
+        # Remove Discord webhooks from public API response
+        product.pop("discord_webhooks", None)
     
     return products
 
