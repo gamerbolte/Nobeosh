@@ -5,9 +5,9 @@ import { useEffect } from 'react';
  * Usage: <SEO title="Page Title" description="..." image="..." />
  */
 export default function SEO({ 
-  title = 'GameShop Nepal - Digital Products at Best Prices',
-  description = 'Buy Netflix, Spotify, YouTube Premium, PUBG UC and more at the best prices in Nepal. Instant delivery, 100% genuine products.',
-  keywords = 'digital products Nepal, Netflix Nepal, Spotify Nepal, gaming topup Nepal',
+  title = 'GameShop Nepal | Netflix, Spotify, YouTube Premium & Prime Video सस्तोमा किन्नुहोस्',
+  description = 'नेपालमा Netflix, Spotify Premium, YouTube Premium, Amazon Prime Video सबैभन्दा सस्तो दरमा किन्नुहोस्। तुरुन्त डेलिभरी, १००% असली प्रोडक्ट। Buy Netflix, Spotify, YouTube Premium in Nepal at best prices. Instant delivery guaranteed.',
+  keywords = 'Netflix Nepal, Spotify Premium Nepal, YouTube Premium Nepal, Prime Video Nepal, Netflix subscription Nepal, Spotify कसरी किन्ने, YouTube Premium price Nepal, streaming services Nepal, digital subscription Nepal, Netflix सस्तोमा, OTT subscription Nepal',
   image = 'https://customer-assets.emergentagent.com/job_8ec93a6a-4f80-4dde-b760-4bc71482fa44/artifacts/4uqt5osn_Staff.zip%20-%201.png',
   url = typeof window !== 'undefined' ? window.location.href : '',
   type = 'website',
