@@ -2181,7 +2181,16 @@ async def create_promo_code(code_data: PromoCodeCreate, current_user: dict = Dep
         discount_value=code_data.discount_value,
         min_order_amount=code_data.min_order_amount,
         max_uses=code_data.max_uses,
-        is_active=code_data.is_active
+        max_uses_per_customer=code_data.max_uses_per_customer,
+        is_active=code_data.is_active,
+        expiry_date=code_data.expiry_date,
+        applicable_categories=code_data.applicable_categories,
+        applicable_products=code_data.applicable_products,
+        first_time_only=code_data.first_time_only,
+        buy_quantity=code_data.buy_quantity,
+        get_quantity=code_data.get_quantity,
+        auto_apply=code_data.auto_apply,
+        stackable=code_data.stackable
     )
     await db.promo_codes.insert_one(code.model_dump())
     result = code.model_dump()
