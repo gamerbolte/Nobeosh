@@ -80,6 +80,9 @@ export default function ProductPage() {
   };
 
   useEffect(() => {
+    // Scroll to top when product page loads
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
     const fetchProduct = async () => {
       try {
         const [productRes, settingsRes, creditRes] = await Promise.all([
