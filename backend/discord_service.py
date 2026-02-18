@@ -81,13 +81,13 @@ async def send_discord_order_notification(
     # Build custom fields text (outside embed for click-to-copy)
     custom_fields_text = ""
     if custom_fields_list:
-        custom_fields_text += "\n\n**📝 Custom Fields (Click to Copy):**\n"
+        custom_fields_text += "\n"
         for field_data in custom_fields_list:
             custom_fields_text += f"**{field_data['label']}:** `{field_data['value']}`\n"
     
     # Build Discord message with embed
     embed = {
-        "content": f"@everyone 🔔 **New Order Received!**{custom_fields_text}",
+        "content": f"@everyone{custom_fields_text}",
         "embeds": [{
             "title": f"{status_emoji} New Order - #{order_id[:8].upper()}",
             "color": color,
