@@ -108,13 +108,14 @@ async def send_discord_order_notification(
         }]
     }
     
-    # Add custom fields in click-to-copy format if available
-    if custom_fields_text.strip():
-        embed["embeds"][0]["fields"].insert(2, {
-            "name": "📝 Custom Fields (Click to Copy)",
-            "value": f"```\n{custom_fields_text.strip()}\n```",
-            "inline": False
-        })
+    # Add custom fields - each value in separate code block for easy copying
+    if custom_fields_list:
+        for field_data in custom_fields_list:
+            embed["embeds"][0]["fields"].insert(2, {
+                "name": f"📝 {field_data['label']}",
+                "value": f"```\n{field_data['value']}\n```",
+                "inline": False
+            })
     
     
     # Send to all webhooks
